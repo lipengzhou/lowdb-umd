@@ -1,5 +1,7 @@
 # lowdb [![](http://img.shields.io/npm/dm/lowdb.svg?style=flat)](https://www.npmjs.org/package/lowdb) [![Node.js CI](https://github.com/typicode/lowdb/actions/workflows/node.js.yml/badge.svg)](https://github.com/typicode/lowdb/actions/workflows/node.js.yml)
 
+> TIPS: lowdb build with umd module.
+
 > Simple to use local JSON database. Powered by plain JavaScript 🦉
 
 ```js
@@ -308,7 +310,7 @@ See [`src/adapters/`](src/adapters) for more examples.
 
 #### Custom serialization
 
-To create an adapter for another format than JSON, you can use `TextFile` or `TextFileSync`. 
+To create an adapter for another format than JSON, you can use `TextFile` or `TextFileSync`.
 
 For example:
 
@@ -345,6 +347,6 @@ Lowdb doesn't support Node's cluster module.
 
 If you have large JavaScript objects (`~10-100MB`) you may hit some performance issues. This is because whenever you call `db.write`, the whole `db.data` is serialized using `JSON.stringify` and written to storage.
 
-Depending on your use case, this can be fine or not. It can be mitigated by doing batch operations and calling `db.write` only when you need it. 
+Depending on your use case, this can be fine or not. It can be mitigated by doing batch operations and calling `db.write` only when you need it.
 
 If you plan to scale, it's highly recommended to use databases like PostgreSQL or MongoDB instead.
