@@ -7,9 +7,14 @@
   <title>Document</title>
 </head>
 <body>
-  <script src="./lowdb.min.js"></script>
+  <script src="./lowdb.js"></script>
   <script>
-    console.log(lowdb)
+    window.localStorage.setItem('db', JSON.stringify({}))
+    const { LowSync, LocalStorage } = lowdb
+    const db = new LowSync(new LocalStorage('db'))
+    db.read()
+    console.log(db)
+    // console.log(db.data.posts)
   </script>
 </body>
 </html>

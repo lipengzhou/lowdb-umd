@@ -168,14 +168,14 @@
             __classPrivateFieldSet$2(this, _LocalStorage_key, key, "f");
         }
         read() {
-            const value = global.localStorage.getItem(__classPrivateFieldGet$2(this, _LocalStorage_key, "f"));
+            const value = globalThis.localStorage.getItem(__classPrivateFieldGet$2(this, _LocalStorage_key, "f"));
             if (value === null) {
                 return null;
             }
             return JSON.parse(value);
         }
         write(obj) {
-            global.localStorage.setItem(__classPrivateFieldGet$2(this, _LocalStorage_key, "f"), JSON.stringify(obj));
+            globalThis.localStorage.setItem(__classPrivateFieldGet$2(this, _LocalStorage_key, "f"), JSON.stringify(obj));
         }
     }
     _LocalStorage_key = new WeakMap();

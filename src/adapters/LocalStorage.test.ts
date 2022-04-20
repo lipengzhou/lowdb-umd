@@ -5,7 +5,7 @@ import { LocalStorage } from './LocalStorage.js'
 const storage: { [key: string]: string } = {}
 
 // Mock localStorage
-global.localStorage = {
+globalThis.localStorage = {
   getItem: (key: string): string | null => storage[key] || null,
   setItem: (key: string, data: string) => (storage[key] = data),
   length: 1,
